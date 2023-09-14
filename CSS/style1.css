@@ -1,0 +1,1056 @@
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+    display: block;
+}
+
+body {
+    line-height: 1;
+}
+
+ol,
+ul {
+    list-style: none;
+}
+
+blockquote,
+q {
+    quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+    content: '';
+    content: none;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+:focus {
+    outline: 0;
+}
+
+/* lato-regular - latin */
+@font-face {
+    font-display: swap;
+    /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+    font-family: 'Lato';
+    font-style: normal;
+    font-weight: 400;
+    src: url('../fonts/lato-v24-latin-regular.woff2') format('woff2');
+    /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+
+/* lato-700 - latin */
+@font-face {
+    font-display: swap;
+    /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+    font-family: 'Lato';
+    font-style: normal;
+    font-weight: 700;
+    src: url('../fonts/lato-v24-latin-700.woff2') format('woff2');
+    /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+
+/* lato-900 - latin */
+@font-face {
+    font-display: swap;
+    /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+    font-family: 'Lato';
+    font-style: normal;
+    font-weight: 900;
+    src: url('../fonts/lato-v24-latin-900.woff2') format('woff2');
+    /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+
+html {
+    box-sizing: border-box;
+}
+
+*,
+*::after,
+*::before {
+    box-sizing: inherit;
+}
+
+body {
+    font-family: 'Lato';
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    color: #102746;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    margin: 0;
+}
+
+.wrapper-full {
+    max-width: 1262px;
+    margin: 0 auto;
+}
+
+.wrapper {
+    max-width: 1062px;
+    margin: 0 auto;
+}
+
+.section-title {
+    font-size: 35px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 1.2;
+    color: #102746;
+    padding-bottom: 10px;
+    position: relative;
+}
+
+.section-title::after {
+    content: '';
+    width: 253px;
+    height: 3px;
+    background-color: #006dfe;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+/* Header styles start */
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding-bottom: 25px;
+    transition: 0.2s linear;
+    z-index: 99;
+}
+
+.header-active {
+    background: #0E1D28;
+}
+
+.header-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-end;
+    justify-content: space-between;
+    margin-top: 56px;
+    max-width: 1060px;
+}
+
+.header-list {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.header-item {
+    margin-right: 82px;
+}
+
+.header-item:last-child {
+    margin-right: 0;
+}
+
+.header-link {
+    font-size: 18px;
+    color: #fff;
+    text-decoration: none;
+    line-height: 1.3;
+}
+
+.header-link:hover,
+.header-link:focus,
+.header-link:active {
+    opacity: 75%;
+}
+
+.header-burger {
+    display: none;
+    position: relative;
+    width: 40px;
+    height: 28px;
+}
+
+.burger-line {
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 2px;
+    background-color: #fff;
+    right: 0;
+}
+
+.burger-line-first {
+    top: 0;
+}
+
+.burger-line-second {
+    top: 50%;
+    transform: translateY(-50%);
+
+}
+
+.burger-line-third {
+    bottom: 0;
+}
+
+/* Header styles end */
+
+/* Intro styles start */
+.intro {
+    background: url(../img/intro_bg.jpg) no-repeat center;
+    min-height: 100vh;
+    background-size: cover;
+    padding-top: 263px;
+    padding-bottom: 223px;
+}
+
+.intro-title {
+    font-size: 50px;
+    font-style: normal;
+    font-weight: 500;
+    color: #fff;
+    max-width: 619px;
+    line-height: 1.2;
+    margin-bottom: 22px;
+}
+
+.intro-subtitle {
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #fff;
+    max-width: 546px;
+    margin-bottom: 59px;
+}
+
+.search-form-intro {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.search-form-text {
+    border: 0;
+    border-bottom: 2px solid #bfc0c5;
+    background: transparent url(../img/svg/Oval.svg) no-repeat left 6px;
+    background-size: 20px;
+    width: 297px;
+    margin-right: 60px;
+    padding-left: 43px;
+    padding-bottom: 22px;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 1.3;
+    color: #fff;
+}
+
+.search-form-text::placeholder {
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 1.3;
+    color: #fff;
+}
+
+.form-submit {
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    color: #fff;
+    text-transform: uppercase;
+    background-color: #1b7dff;
+    border: 0;
+    border-radius: 4px;
+    padding: 15px 39px;
+}
+
+.form-submit:hover,
+.form-submit:focus,
+.form-submit:active {
+    background-color: #1e4fa3;
+}
+
+/* Intro styles end */
+
+/* Benefit styles start */
+.benefits {
+    margin-bottom: 131px;
+}
+
+.benefits-wrap {
+    position: relative;
+    max-width: 1262px;
+    background-color: #fff;
+    margin: 0 auto;
+    box-shadow: 0px 2px 20px 0px rgba(21, 24, 36, 0.16);
+}
+
+.benefits-title {
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: translateY(-100%);
+    font-size: 35px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 42px;
+    padding: 100px 93px 88px 100px;
+    background-color: #fff;
+}
+
+.benefits-cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-column-gap: 55px;
+    padding: 0 100px;
+    align-items: end;
+}
+
+.benefits-card {
+    grid-column: span 1;
+    margin-bottom: 111px;
+}
+
+.benefits-card-pic {
+    margin-bottom: 37px;
+    max-width: 66px;
+}
+
+.benefits-card-thumb {
+    display: block;
+}
+
+.benefits-card-title {
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 1.3;
+    padding-bottom: 26px;
+}
+
+.benefits-card-descr {
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1.5;
+    margin-bottom: 39px;
+}
+
+.benefits-card-more {
+    display: inline-block;
+    color: #006dfe;
+    font-family: Lato;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1.5;
+    text-decoration: none;
+    transition: 0.3s all;
+    background: url(../img/svg/arrow.svg) no-repeat 95% center;
+    padding-right: 59px;
+}
+
+.benefits-card-more:hover,
+.benefits-card-more:focus {
+    background: url(../img/svg/arrow.svg) no-repeat right center;
+}
+
+/* Benefit styles end */
+
+/* Places styles start */
+.places {
+    margin-bottom: 131px;
+}
+
+.places-title {
+    margin-right: 15px;
+}
+
+.places-caption {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: baseline;
+}
+
+.places-view-all {
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #006dfe;
+    text-decoration: none;
+    background: url(../img/svg/arrow.svg) no-repeat right center;
+    padding-right: 59px;
+}
+
+.places-view-all:hover,
+.places-view-all:focus {
+    opacity: 0.65;
+}
+
+.places-cards {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-gap: 10px;
+}
+
+.places-card-pic-lg {
+    grid-column: span 3;
+    height: 354px;
+}
+
+.places-card-pic-sm {
+    grid-column: span 2;
+    height: 283px;
+}
+
+.places-card-pic-size-lg {
+    height: 354px;
+    object-fit: cover;
+}
+
+.places-card-pic-size-sm {
+    height: 283px;
+    object-fit: cover;
+}
+
+.places-card-pic {
+    width: 100%;
+    transition: 0.3s all;
+}
+
+.places-card-title {
+    font-size: 50px;
+    font-style: normal;
+    font-weight: 700;
+    color: #fff;
+    position: absolute;
+    bottom: 27px;
+    left: 29px;
+    z-index: 3;
+}
+
+.places-card {
+    position: relative;
+    overflow: hidden;
+}
+
+.places-card::after {
+    content: '';
+    display: block;
+    background: rgba(21, 24, 36, 0.4);
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 2;
+}
+
+.places-card:hover .places-card-pic {
+    transform: scale(1.1);
+}
+
+.places-link {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 4;
+}
+
+/* Places styles end */
+
+/* Tours styles start */
+.tours {
+    padding-top: 4px;
+    margin-bottom: 139px;
+}
+
+.tours-tour {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 108px;
+    align-items: center;
+    margin-bottom: 77px;
+}
+
+.more-link {
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #006dfe;
+    text-decoration: none;
+    background: url(../img/svg/arrow.svg) no-repeat right center;
+    padding-right: 59px;
+}
+
+.more-link:hover,
+.more-link:focus {
+    opacity: 0.65;
+}
+
+.tour-info {
+    padding-left: 47px;
+
+}
+
+.tour-title {
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 1.33;
+    color: #102746;
+    margin-bottom: 85px;
+    max-width: 360px;
+}
+
+.tour-desc {
+    color: #102746;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1.5;
+    margin-bottom: 58px;
+    max-width: 519px;
+}
+
+/* Tours styles end */
+
+/* Top places styles start */
+.top-places {
+    margin-bottom: 144px;
+}
+
+.places-title {
+    margin-bottom: 54px;
+}
+
+.top-places-cards {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    column-gap: 53px;
+    row-gap: 58px;
+}
+
+.top-places-card {
+    display: flex;
+    flex-direction: column;
+    grid-column: span 2;
+}
+
+.top-places-card-pic {
+    position: relative;
+    margin-bottom: 45px;
+}
+
+.top-card-stats {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    align-items: center;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    padding: 16px 25px;
+    width: 100%;
+    background: rgba(21, 24, 36, 0.60);
+}
+
+.top-places-item {
+    margin: 0 auto 0 0;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 1.33;
+    color: #fff;
+}
+
+.top-cards-likes {
+    padding-right: 20px;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 1.5;
+    color: #fff;
+    margin-right: 14px;
+    background: url(../img/svg/heart-ico.svg) no-repeat right;
+}
+
+.top-cards-comments {
+    padding-right: 23px;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 1.5;
+    color: #fff;
+    background: url(../img/svg/like-ico.svg) no-repeat right;
+}
+
+.top-places-desc {
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #102746;
+    margin-bottom: 40px;
+}
+
+.top-places-more {
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    color: #fff;
+    text-decoration: none;
+    background-color: #006DFE;
+    width: 118px;
+    padding: 12px 19px;
+    margin: auto 0 0 0;
+}
+
+.top-places-more:hover,
+.top-places-more:focus,
+.top-places-more:active {
+    background-color: #1e4fa3;
+}
+
+/* Top places styles end */
+
+/* Videos styles start */
+.videos {
+    padding-top: 4px;
+    width: 100%;
+}
+
+.videos-wrapper {
+    max-width: 1262px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.videos-item {
+    padding-top: 56.25%;
+}
+
+.video-frame {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+/* Videos styles end */
+
+/* Footer styles start */
+.footer {
+    background: #0E1D28;
+    padding: 119px 0;
+}
+
+.footer-items {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.footer-logo {
+    width: 50%;
+}
+
+.footer-nav {
+    display: flex;
+    flex-wrap: wrap;
+    width: 50%;
+    justify-content: space-between;
+}
+
+.footer-menu-title {
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 1.5;
+    color: #fff;
+}
+
+.footer-menu-link {
+    text-decoration: none;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1.6;
+    color: #fff;
+}
+
+.footer-menu-link:hover,
+.footer-menu-link:focus,
+.footer-menu-link:hover,
+.footer-menu-link:visited {
+    opacity: .65;
+}
+
+/* Footer styles end */
+
+/* Media start */
+@media screen and (max-width: 960px) {
+    .search-form-text {
+        margin-bottom: 20px;
+    }
+
+    .benefits {
+        margin-bottom: 55px;
+    }
+
+    .benefits-cards {
+        padding: 0 30px;
+    }
+
+    .benefits-title {
+        padding: 50px 47px 45px 30px;
+    }
+
+    .benefits-wrap {
+        box-shadow: none;
+    }
+
+    .places-card-pic-lg,
+    .places-card-pic-sm {
+        grid-column: span 6;
+    }
+
+    .tours-tour {
+        column-gap: 35px;
+    }
+
+    .tour-title,
+    .tour-desc {
+        margin-bottom: 15px;
+    }
+
+    .top-places {
+        margin-bottom: 72px;
+    }
+
+    .top-places-card {
+        grid-column: span 3;
+    }
+
+    .top-places-card-pic {
+        margin-bottom: 15px;
+    }
+
+    .top-places-desc {
+        margin-bottom: 15px;
+    }
+
+    .top-places-cards {
+        column-gap: 25px;
+        row-gap: 50px;
+    }
+
+    .footer {
+        padding: 50px;
+    }
+}
+
+@media screen and (max-width: 850px) {
+    .title-height {
+        padding-bottom: 48px;
+    }
+}
+
+@media screen and (max-width: 1300px) {
+
+    .wrapper,
+    .wrapper-full {
+        padding: 0 15px;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .section-title {
+        margin-bottom: 25px;
+    }
+
+    .section-title::after {
+        width: 80px;
+    }
+
+    .header-burger {
+        display: block;
+    }
+
+    .header-nav {
+        position: fixed;
+        width: 90%;
+        height: 90%;
+        top: 0;
+        right: 0;
+        background: #0E1D28;
+        z-index: 10;
+        padding: 80px;
+        transform: translateX(100%);
+        transition: all .3s linear;
+    }
+
+    .header-nav-active {
+        transform: translateX(0);
+    }
+
+    .header-item {
+        width: 100%;
+        margin-right: 0;
+        margin-bottom: 32px;
+    }
+
+    .header-link {
+        font-size: 42px;
+        line-height: 48px;
+    }
+
+    .header-item:last-child {
+        margin-bottom: 0;
+    }
+
+    .header-nav-close {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        width: 40px;
+        height: 40px;
+        z-index: 11;
+    }
+
+    .header-nav-close-line {
+        display: block;
+        position: absolute;
+        width: 100%;
+        height: 2px;
+        background: #fff;
+        top: 50%;
+    }
+
+    .header-nav-close-line:first-child {
+        transform: translateY(-50%) rotate(45deg);
+    }
+
+    .header-nav-close-line:last-child {
+        transform: translateY(-50%) rotate(-45deg);
+    }
+
+    .header-wrapper {
+        margin-top: 30px;
+    }
+
+    .intro {
+        padding-top: 100px;
+    }
+
+    .intro-title {
+        font-size: 32px;
+    }
+
+    .search-form-text {
+        width: 100%;
+        margin-right: 0;
+        padding-bottom: 12px;
+        background: transparent url(../img/svg/Oval.svg) no-repeat left 2px;
+    }
+
+    .form-submit {
+        width: 100%;
+        margin-top: 15px;
+    }
+
+    .search-form-text::placeholder {
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 1.2;
+    }
+
+    .benefits-card {
+        grid-column: span 6;
+        margin-bottom: 54px;
+    }
+
+    .benefits-card-pic {
+        margin-bottom: 20px;
+    }
+
+    .benefits-card-descr {
+        margin-bottom: 20px;
+    }
+
+    .places {
+        margin-bottom: 72px;
+    }
+
+    .places-caption {
+        margin-bottom: 40px;
+    }
+
+    .places-card-pic-lg,
+    .places-card-pic-sm {
+        height: 230px;
+    }
+
+    .tours {
+        margin-bottom: 72px;
+    }
+
+    .tour-pic,
+    .tour-info {
+        grid-column: span 2;
+        padding-left: 0;
+    }
+
+    .tour-pic-mob-first {
+        grid-row-start: -1;
+    }
+
+    .tours-tour {
+        margin-bottom: 50px;
+    }
+
+    .top-places-card {
+        grid-column: span 6;
+        margin-bottom: 30px;
+    }
+
+    .footer {
+        padding: 30px;
+    }
+
+    .footer-logo {
+        width: 100%;
+        margin-bottom: 24px;
+    }
+
+    .footer-nav {
+        width: 100%;
+    }
+
+    .footer-menu {
+        width: 50%;
+        margin-bottom: 24px;
+    }
+
+}
+
+
+/* Media end */
