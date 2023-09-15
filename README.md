@@ -1,1 +1,1 @@
-https://github.com/OlehHelgi/MyProjects/tree/gh-pages
+https://olehhelgi.github.io/MyProjects/
